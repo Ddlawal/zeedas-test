@@ -1,5 +1,7 @@
 import { FC } from 'react'
 
+import { PrimaryLayout } from '../../layout/PrimaryLayout'
+
 export const Resume: FC = () => {
-  return <div>Resume</div>
+  return <PrimaryLayout showHeaderBorder={true}>Resume</PrimaryLayout>
 }

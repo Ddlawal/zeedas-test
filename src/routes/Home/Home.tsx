@@ -1,5 +1,7 @@
 import { FC } from 'react'
 
+import { PrimaryLayout } from '../../layout/PrimaryLayout'
+
 export const Home: FC = () => {
-  return <div>Home</div>
+  return <PrimaryLayout className="px-[25rem]">Home</PrimaryLayout>
 }

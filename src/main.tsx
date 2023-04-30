@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     element: <Resume />,
   },
   {
-    path: '/viewer-stat',
+    path: '/viewer-stats',
     element: <ViewerStats />,
   },
 ])

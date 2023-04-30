@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom'
 import { MenuButton } from './MenuButton'
 import { MenuItems } from './MenuItems'
 import { NAV_LINKS } from '../../lib/constants'
+import { Button } from '../Button'
 
 export const Menu: FC = () => {
   const location = useLocation()
@@ -20,9 +21,9 @@ export const Menu: FC = () => {
           <MenuItems items={NAV_LINKS} pathName={pathName} />
         )}
       >
-        <div>
+        <Button>
           <MenuButton />
-        </div>
+        </Button>
       </Dropdown>
     </Space>
   )

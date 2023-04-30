@@ -6,9 +6,12 @@ module.exports = {
     extend: {
       colors: {
         zeedas: {
-          'border-gray': '##D8DAE5',
+          'border-gray': '#D8DAE5',
+          'btn-primary': '#229BE0',
           'menu-bg-10': '#1018401A',
           'text-blue': '#23B3E8',
+          'text-primary': '#101840',
+          'btn-secondary': '#1018400D',
         },
       },
       boxShadow: {

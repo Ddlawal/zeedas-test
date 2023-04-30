@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { IconProps } from './icons.interface'
 
-export const ArrowDownIcon: FC<IconProps> = ({
+export const DownIcon: FC<IconProps> = ({
   height = 6,
   width = 10,
   color = '#696F8C',

@@ -1,10 +1,6 @@
-import { DetailedHTMLProps, FC } from 'react'
+import { FC } from 'react'
 import cx from 'classnames'
-
-type ButtonProps = DetailedHTMLProps<
-  React.ButtonHTMLAttributes<HTMLButtonElement>,
-  HTMLButtonElement
-> & { primary?: boolean; secondary?: boolean }
+import { ButtonProps } from './Button.interface'
 
 export const Button: FC<ButtonProps> = ({
   children,

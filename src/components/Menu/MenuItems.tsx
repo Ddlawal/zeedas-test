@@ -6,13 +6,13 @@ import { NavLink } from '../NavLink'
 import { COLORS } from '../../lib/constants'
 
 export const MenuItems: FC<MenuItemsProps> = ({ pathName, items }) => {
+  const idPrefix = useId()
+
   return (
     <ul className="absolute right-[6px] flex min-h-[184px] w-[172px] flex-col gap-3 rounded-[10px] bg-white px-[20px] py-[34px] shadow-zeedas">
-      {items.map(({ icon, label, to }) => {
-        const id = useId()
-
+      {items.map(({ icon, id, label, to }) => {
         return (
-          <li key={id}>
+          <li key={idPrefix + id}>
             <NavLink
               to={to}
               label={label}

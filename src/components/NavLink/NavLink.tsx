@@ -10,9 +10,14 @@ export const NavLink: FC<NavLinkProps> = ({
   iconProps,
   label,
   to,
+  ...rest
 }) => {
   return (
-    <Link to={to} className={cx('flex items-center gap-3', className)}>
+    <Link
+      to={to}
+      className={cx('flex items-center gap-3', className)}
+      {...rest}
+    >
       <Icon {...iconProps} />
       {label}
     </Link>

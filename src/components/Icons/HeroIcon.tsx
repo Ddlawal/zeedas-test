@@ -1,11 +1,11 @@
 import { FC } from 'react'
 import { IconProps } from './icons.interface'
 
-export const HeroIcon: FC = ({
-  height = 20,
-  width = 20,
+export const HeroIcon: FC<IconProps> = ({
+  height = 18,
+  width = 14,
   color = '#696F8C',
-}: IconProps): JSX.Element => {
+}): JSX.Element => {
   return (
     <svg
       width={width}

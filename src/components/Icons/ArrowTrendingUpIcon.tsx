@@ -1,11 +1,11 @@
 import { FC } from 'react'
 import { IconProps } from './icons.interface'
 
-export const ArrowTrendingUpIcon: FC = ({
+export const ArrowTrendingUpIcon: FC<IconProps> = ({
   height = 11,
   width = 18,
   color = '#696F8C',
-}: IconProps): JSX.Element => {
+}): JSX.Element => {
   return (
     <svg
       width={width}

@@ -1,11 +1,11 @@
 import { FC } from 'react'
 import { IconProps } from './icons.interface'
 
-export const BriefCaseIcon: FC = ({
+export const BriefCaseIcon: FC<IconProps> = ({
   height = 18,
   width = 16,
   color = '#696F8C',
-}: IconProps): JSX.Element => {
+}): JSX.Element => {
   return (
     <svg
       width={width}

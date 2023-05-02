@@ -1,4 +1,8 @@
 import {
+  AccordionItemProps,
+  RecentVisitorsI,
+} from '../components/Accordion/Accordion.interface'
+import {
   AcademicCapIcon,
   AndroidIcon,
   ArrowTrendingUpIcon,
@@ -471,7 +475,7 @@ export const TIME_SPENT_ON_SECTION_METRICS = [
   { id: 5, metric: 'Task awareness...', time: '9 hrs (3%)', percent: 3 },
 ]
 
-export const RECENT_VISITORS = [
+export const RECENT_VISITORS: Array<RecentVisitorsI> = [
   {
     id: 1,
     bg: 'bg-[#1B7AB0]',

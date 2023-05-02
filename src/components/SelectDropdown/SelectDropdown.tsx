@@ -14,7 +14,7 @@ const DropdownItems: FC<{
       {items.map(({ id, label }) => {
         return (
           <li key={idPrefix + id}>
-            <Button className="w-full text-left hover:text-zeedas-text-blue">
+            <Button className="w-full text-left transition-all hover:text-zeedas-text-blue">
               {label}
             </Button>
           </li>

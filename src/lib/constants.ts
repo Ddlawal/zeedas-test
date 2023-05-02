@@ -109,7 +109,17 @@ export const TIMELINE_ITEMS = [
     iconColor: COLORS.PROGRESS_BLUE_STROKE,
     imageSrc: DesignWizardBadge1Image,
   },
-] as const
+  {
+    badgeColor: '',
+    badgeText: '',
+    badgeTextColor: 'text-zeedas-blue',
+    date: '',
+    captionText: '',
+    captionSubtext: '',
+    iconColor: COLORS.PROGRESS_BLUE_STROKE,
+    imageSrc: '',
+  },
+]
 
 export const NAV_LINKS = [
   {

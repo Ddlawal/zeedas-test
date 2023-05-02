@@ -1,4 +1,5 @@
 import { FC, useId } from 'react'
+import cx from 'classnames'
 
 import { PROGRAMMING_SKILLS } from '../../lib/constants'
 import { SkillBadge } from '../Badge'
@@ -49,10 +50,15 @@ export const UserInfo: FC<UserInfoProps> = ({
           {showFollowButton && <Button default>Follow</Button>}
         </div>
       </div>
-      <div className="mb-2 text-2xl font-extrabold leading-7 text-zeedas-text-primary">
+      <div
+        className={cx(
+          showFollowButton ? 'font-extrabold' : 'font-normal',
+          'mb-2 text-2xl leading-7 text-zeedas-text-primary'
+        )}
+      >
         Adeyemi Oluwafemi
       </div>
-      <div className="mb-6 text-sm leading-[21px] tracking-[-0.01rem] text-zeedas-text-secondary">
+      <div className="mb-6 text-sm font-light leading-[21px] tracking-[-0.01rem] text-zeedas-text-secondary">
         I’m a talented full-stack developer with a passion for building
         high-quality, scalable, and maintainable web applications. With my
         extensive experience working with popular frameworks such as Spring,

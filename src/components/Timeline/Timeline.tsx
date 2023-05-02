@@ -30,17 +30,17 @@ const items = TIMELINE_ITEMS.map(
     imageSrc,
   }) => ({
     children: (
-      <div className="ml-28">
+      <div className="mb-6 ml-28">
         <div
           className={cx(
             badgeColor,
-            'mb-2 inline-flex items-center gap-x-2.5 rounded-[6.25rem] px-2.5 py-1'
+            'mb-[13px] inline-flex items-center gap-x-2.5 rounded-[6.25rem] px-2.5 py-1'
           )}
         >
-          <Icon color={iconColor} />
+          {Icon && <Icon color={iconColor} />}
           <div className={cx(badgeTextColor, 'font-bold')}>{badgeText}</div>
         </div>
-        <img src={imageSrc} alt="dashboard" height={240} />
+        {imageSrc && <img src={imageSrc} alt="dashboard" height={240} />}
         <Caption title={captionText} subtitle={captionSubtext} />
       </div>
     ),
@@ -49,7 +49,7 @@ const items = TIMELINE_ITEMS.map(
         <div className="text-left text-sm font-extrabold leading-4 text-zeedas-timeline-label">
           {date}
         </div>
-        <ClockIcon />
+        {date && <ClockIcon />}
       </div>
     ),
   })
@@ -57,8 +57,13 @@ const items = TIMELINE_ITEMS.map(
 
 export const Timeline: FC = () => {
   return (
-    <div className="mt-10">
-      <AntDTimeline mode="left" items={items} />
+    <div className="mt-3">
+      <AntDTimeline
+        mode="left"
+        items={items}
+        // pending={true}
+        // pendingDot={<ClockCircleOutlined style={{ fontSize: '16px' }} />}
+      />
     </div>
   )
 }

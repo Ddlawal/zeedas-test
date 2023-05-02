@@ -18,11 +18,17 @@ const Title: FC<{ title: string }> = ({ title }) => (
 export const ViewerStats: FC = () => {
   return (
     <PrimaryLayout showHeaderBorder={true} className="mb-20 px-[19.5625rem]">
-      <div className="mb-6 mt-6 flex justify-between">
+      <div className="my-6 flex justify-between">
         <div className="mb-5 text-2xl font-semibold leading-7 text-zeedas-text-primary">
           Profile analytics
         </div>
-        <SelectDropdown />
+        <SelectDropdown
+          options={[
+            { id: 1, label: 'Today' },
+            { id: 3, label: 'Last 7 days' },
+            { id: 3, label: 'Last 30 days' },
+          ]}
+        />
       </div>
 
       <Card className="mb-5 flex px-6 py-5">

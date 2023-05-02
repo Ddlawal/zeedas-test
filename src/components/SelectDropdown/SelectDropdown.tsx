@@ -24,24 +24,18 @@ const DropdownItems: FC<{
   )
 }
 
-export const SelectDropdown: FC = () => {
+export const SelectDropdown: FC<{
+  options: Array<{ id: number; label: string }>
+}> = ({ options }) => {
   return (
     <Space direction="vertical">
       <Dropdown
         placement="bottomRight"
         trigger={['click']}
-        dropdownRender={() => (
-          <DropdownItems
-            items={[
-              { id: 1, label: 'Today' },
-              { id: 3, label: 'Last 7 days' },
-              { id: 3, label: 'Last 30 days' },
-            ]}
-          />
-        )}
+        dropdownRender={() => <DropdownItems items={options} />}
       >
-        <Button className="flex items-center gap-x-2 text-sm font-bold text-zeedas-text-secondary">
-          Last 30 days <DownIcon />
+        <Button className="flex items-center gap-x-2 text-sm font-semibold text-zeedas-text-secondary">
+          {options[0].label} <DownIcon />
         </Button>
       </Dropdown>
     </Space>

@@ -61,7 +61,7 @@ export const Accordion: FC = () => {
       {RECENT_VISITORS.map((visitors, i) => (
         <AccordionItem
           activeIndex={activeIndex}
-          key={idPrefix + i}
+          key={idPrefix + visitors.id}
           onClick={handleClick}
           index={i}
           {...visitors}

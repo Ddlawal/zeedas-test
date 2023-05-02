@@ -7,6 +7,7 @@ import { AccordionItemProps } from './Accordion.interface'
 import { Button } from '../Button'
 import { DownIcon } from '../Icons'
 import { COLORS } from '../../lib/constants'
+import { useProgressPercent } from '../../lib/hooks/useProgressPercent'
 
 export const AccordionItem: FC<AccordionItemProps> = ({
   activeIndex,
@@ -23,6 +24,8 @@ export const AccordionItem: FC<AccordionItemProps> = ({
   timeSpent,
   onClick,
 }) => {
+  const { progressPercent } = useProgressPercent(readPercent)
+
   return (
     <div
       className={cx(
@@ -50,7 +53,7 @@ export const AccordionItem: FC<AccordionItemProps> = ({
           <Progress
             className="mr-10"
             type="circle"
-            percent={readPercent}
+            percent={progressPercent}
             size={26.67}
             strokeWidth={15}
             strokeColor={COLORS.PROGRESS_GRAY_STROKE}

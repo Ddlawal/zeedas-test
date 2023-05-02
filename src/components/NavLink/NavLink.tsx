@@ -15,7 +15,10 @@ export const NavLink: FC<NavLinkProps> = ({
   return (
     <Link
       to={to}
-      className={cx('flex items-center gap-3', className)}
+      className={cx(
+        'flex items-center gap-3 transition-all hover:bg-zeedas-bg-chart hover:font-medium',
+        className
+      )}
       {...rest}
     >
       <Icon {...iconProps} />

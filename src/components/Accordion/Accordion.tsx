@@ -51,7 +51,7 @@ export const Accordion: FC = () => {
 
   return (
     <div>
-      <div className="mb-3 flex justify-between overflow-hidden px-4">
+      <div className="mb-[12.5px] flex justify-between overflow-hidden px-4">
         <Header className="min-w-[13.85rem]">Name and email</Header>
         <Header className="min-w-[6rem]">Date</Header>
         <Header className="min-w-[9rem]">Location</Header>

@@ -45,7 +45,7 @@ const TimeSpentSectionMetric: FC<{
   <div className=" h-[2.5rem]">
     <div className="flex items-center justify-between text-sm font-light text-zeedas-text-dark">
       <div>{metric}</div>
-      <div className="font-semibold">{time}</div>
+      <div className="text-xs font-medium leading-[18px]">{time}</div>
     </div>
     <Progress
       rootClassName="-top-[7px]"
@@ -139,6 +139,9 @@ export const AccordionContent: FC = () => {
       />
 
       <div className="w-full">
+        <div className="mb-2 text-xs font-medium leading-[18px]">
+          Time spent on sections
+        </div>
         {TIME_SPENT_ON_SECTION_METRICS.map(metric => (
           <TimeSpentSectionMetric key={idPrefix + metric.id} {...metric} />
         ))}

@@ -20,7 +20,10 @@ export const MenuItems: FC<MenuItemsProps> = ({ pathName, items }) => {
               iconProps={{
                 color: pathName === to ? COLORS.TEXT_BLUE : undefined,
               }}
-              className={cx(pathName === to && 'text-zeedas-text-blue')}
+              className={cx(
+                pathName === to &&
+                  'text-zeedas-text-blue hover:text-zeedas-text-blue '
+              )}
             />
           </li>
         )

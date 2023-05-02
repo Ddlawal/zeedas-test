@@ -40,6 +40,7 @@ export const ViewerStats: FC = () => {
           badgeText="87%"
           metricValue={732}
           title={<Title title="Profile visits" />}
+          infoText="Lorem ipsum"
           chartId="Profile-visits"
           chartData={CHART_DATA1}
           chartColor={COLORS.GREEN}
@@ -56,6 +57,7 @@ export const ViewerStats: FC = () => {
           badgeText="27%"
           metricValue={328}
           title={<Title title="Time spent (hrs)" />}
+          infoText="Lorem ipsum"
           chartId="Time-spent"
           chartData={CHART_DATA1}
           chartColor={COLORS.ORANGE}

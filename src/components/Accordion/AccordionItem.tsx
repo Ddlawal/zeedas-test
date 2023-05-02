@@ -30,7 +30,7 @@ export const AccordionItem: FC<AccordionItemProps> = ({
     <div
       className={cx(
         activeIndex === index &&
-          '-mt-4 h-[24rem] rounded-lg border border-zeedas-border-gray bg-zeedas-bg-body pt-4',
+          '-mt-3 h-[24rem] rounded-lg border border-zeedas-border-gray bg-zeedas-bg-body pt-3',
         'mb-3 h-14 overflow-hidden px-4 transition-all duration-500 ease-in-out'
       )}
     >

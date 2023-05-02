@@ -42,17 +42,19 @@ const TimeSpentSectionMetric: FC<{
   percent: number
   time: string
 }> = ({ metric, percent, time }) => (
-  <div className=" h-[3rem]">
+  <div className=" h-[2.5rem]">
     <div className="flex items-center justify-between text-sm font-light text-zeedas-text-dark">
       <div>{metric}</div>
       <div className="font-semibold">{time}</div>
     </div>
     <Progress
+      rootClassName="-top-[7px]"
       percent={percent}
       strokeColor={COLORS.PROGRESS_PURPLE_STROKE}
       trailColor={COLORS.PROGRESS_PURPLE_TRAIL}
       showInfo={false}
       className="m-0"
+      strokeWidth={5}
     />
   </div>
 )

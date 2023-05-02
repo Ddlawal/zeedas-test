@@ -22,7 +22,7 @@ export const ViewerStats: FC = () => {
       className="mx-auto mb-20 w-[50.875rem] px-10 md:px-0"
     >
       <div className="mb-6 mt-10 flex justify-between">
-        <div className="text-2xl font-semibold leading-7 text-zeedas-text-primary">
+        <div className="text-2xl font-medium leading-7 text-zeedas-text-primary">
           Profile analytics
         </div>
         <SelectDropdown

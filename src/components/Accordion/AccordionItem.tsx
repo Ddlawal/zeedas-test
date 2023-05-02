@@ -60,7 +60,13 @@ export const AccordionItem: FC<AccordionItemProps> = ({
             trailColor={COLORS.PROGRESS_GRAY_TRAIL}
             showInfo={false}
           />
-          <Button className="ml-auto px-2 py-3" onClick={() => onClick(index)}>
+          <Button
+            className={cx(
+              activeIndex === index && '-rotate-180',
+              'ml-auto px-2 py-3 transition-all duration-500'
+            )}
+            onClick={() => onClick(index)}
+          >
             <DownIcon />
           </Button>
         </div>

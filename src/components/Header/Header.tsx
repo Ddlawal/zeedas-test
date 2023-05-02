@@ -3,8 +3,11 @@ import cx from 'classnames'
 import { HeaderProps } from './Header.interface'
 import { Logo } from '../Icons'
 import { Menu } from '../Menu'
+import { Button } from '../Button'
+import { useNavigate } from 'react-router-dom'
 
 export const Header: FC<HeaderProps> = ({ showHeaderBorder }) => {
+  const navigator = useNavigate()
   return (
     <div
       className={cx(
@@ -13,7 +16,9 @@ export const Header: FC<HeaderProps> = ({ showHeaderBorder }) => {
           '-z-0 border-b-[1px] border-zeedas-border-gray border-opacity-70'
       )}
     >
-      <Logo />
+      <Button onClick={() => navigator('/')}>
+        <Logo />
+      </Button>
       <Menu />
     </div>
   )

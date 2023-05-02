@@ -33,6 +33,7 @@ import {
   AssessmentProps,
   FundamentalsMetricsItemProps,
 } from '../components/Metrics/Metrics.interface'
+import { ProgrammingSkillsI } from '../components/UserInfo/UserInfo.interface'
 
 export const COLORS = {
   BLUE: '#3366FF',
@@ -142,7 +143,7 @@ export const NAV_LINKS = [
   },
 ] as const
 
-export const PROGRAMMING_SKILLS = [
+export const PROGRAMMING_SKILLS: Array<ProgrammingSkillsI> = [
   {
     id: 1,
     languageRating: 'PHP · 85%',
@@ -166,6 +167,7 @@ export const PROGRAMMING_SKILLS = [
     languageRating: 'NodeJS · 92%',
     icon: NodeJSIcon,
     color: 'bg-zeedas-nodejs',
+    textColor: 'text-zeedas-text-primary',
   },
   {
     id: 5,
@@ -179,7 +181,7 @@ export const PROGRAMMING_SKILLS = [
     icon: RubyIcon,
     color: 'bg-zeedas-ruby',
   },
-] as const
+]
 
 export const CODING_ASSESSMENTS: Array<AssessmentProps> = [
   {

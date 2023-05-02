@@ -12,4 +12,5 @@ export interface SkillBadgeProps {
   icon: ReactNode
   text: string
   className?: string
+  textColor?: string
 }

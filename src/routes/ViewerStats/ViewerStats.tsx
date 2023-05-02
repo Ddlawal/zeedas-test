@@ -18,8 +18,8 @@ const Title: FC<{ title: string }> = ({ title }) => (
 export const ViewerStats: FC = () => {
   return (
     <PrimaryLayout showHeaderBorder={true} className="mb-20 px-[19.5625rem]">
-      <div className="my-6 flex justify-between">
-        <div className="mb-5 text-2xl font-semibold leading-7 text-zeedas-text-primary">
+      <div className="mb-6 mt-10 flex justify-between">
+        <div className="text-2xl font-semibold leading-7 text-zeedas-text-primary">
           Profile analytics
         </div>
         <SelectDropdown

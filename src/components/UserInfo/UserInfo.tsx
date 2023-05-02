@@ -1,4 +1,4 @@
-import { FC, useId } from 'react'
+import { FC, ReactNode, useId } from 'react'
 import cx from 'classnames'
 
 import { PROGRAMMING_SKILLS } from '../../lib/constants'
@@ -65,16 +65,25 @@ export const UserInfo: FC<UserInfoProps> = ({
         Django, and React.
       </div>
       <div className="flex flex-wrap gap-3">
-        {PROGRAMMING_SKILLS.map(({ color, icon: Icon, id, languageRating }) => {
-          return (
-            <SkillBadge
-              key={idPrefix + id}
-              icon={<Icon />}
-              text={languageRating}
-              className={color}
-            />
-          )
-        })}
+        {PROGRAMMING_SKILLS.map(
+          ({ color, icon: Icon, id, languageRating, textColor }) => {
+            const iconNode: ReactNode =
+              typeof Icon === 'string' ? (
+                <img src={Icon} alt={languageRating} width={20} height={20} />
+              ) : (
+                <Icon />
+              )
+            return (
+              <SkillBadge
+                key={idPrefix + id}
+                icon={iconNode}
+                text={languageRating}
+                className={color}
+                textColor={textColor}
+              />
+            )
+          }
+        )}
       </div>
       {showRank && <UserRank />}
     </>

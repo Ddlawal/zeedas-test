@@ -1,7 +1,4 @@
-import {
-  AccordionItemProps,
-  RecentVisitorsI,
-} from '../components/Accordion/Accordion.interface'
+import { RecentVisitorsI } from '../components/Accordion/Accordion.interface'
 import {
   AcademicCapIcon,
   AndroidIcon,

@@ -1,7 +1,9 @@
 import { ReactNode } from 'react'
 
+export type BadgeColorI = 'green' | 'orange'
+
 export interface BadgeProps {
-  color: 'green' | 'orange'
+  color: BadgeColorI
   text: string
   className?: string
 }

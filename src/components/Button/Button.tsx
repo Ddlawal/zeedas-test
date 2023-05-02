@@ -5,7 +5,6 @@ import { ButtonProps } from './Button.interface'
 export const Button: FC<ButtonProps> = ({
   children,
   className,
-  secondary,
   primary,
   ...rest
 }) => {
@@ -13,9 +12,10 @@ export const Button: FC<ButtonProps> = ({
     <button
       className={cx(
         className,
-        (primary || secondary) && 'w-[127px] rounded-[100px] py-[13px]',
+        (primary || rest.default) &&
+          'h-12 w-[127px] rounded-[100px] py-[13px] text-sm',
         primary && 'bg-zeedas-btn-primary text-white',
-        secondary && 'bg-zeedas-btn-secondary text-zeedas-text-primary'
+        rest.default && 'bg-zeedas-btn-default text-zeedas-text-primary'
       )}
       {...rest}
     >

@@ -14,7 +14,6 @@ export const Menu: FC = () => {
   return (
     <Space direction="vertical">
       <Dropdown
-        menu={{ items: [{ label: 'iin', key: '1' }] }}
         placement="bottomRight"
         trigger={['click']}
         dropdownRender={() => (

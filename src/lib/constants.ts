@@ -1,10 +1,17 @@
 import {
+  AcademicCapIcon,
   AndroidIcon,
   ArrowTrendingUpIcon,
   BoltIcon,
+  BriefCaseIcon,
   CommentIcon,
   CubeIcon,
+  DashboardImage,
+  DesignWizardBadge1Image,
+  DesignWizardBadge2Image,
   FlutterIcon,
+  GithubIcon,
+  GithubProfileViewImage,
   HandRaisedIcon,
   HeroIcon,
   HomeIcon,
@@ -15,7 +22,9 @@ import {
   PHPIcon,
   PythonIcon,
   RubyIcon,
+  SignImage,
   ThumbsUpIcon,
+  TrophyIcon,
   ViewerStatsIcon,
 } from '../components/Icons'
 import { BugIcon } from '../components/Icons/BugIcon'
@@ -25,10 +34,12 @@ import {
 } from '../components/Metrics/Metrics.interface'
 
 export const COLORS = {
+  BLUE: '#3366FF',
   BORDER_GRAY: '#D8DAE5',
   TEXT_BLUE: '#23B3E8',
   GREEN: '#429777',
   ORANGE: '#F15832',
+  DARK_ORANGE: '#DB6837',
   PROGRESS_BLUE_STROKE: '#23B3E8',
   PROGRESS_BLUE_TRAIL: '#23B3E826',
   PROGRESS_GREEN_STROKE: '#46EAAC',
@@ -38,6 +49,66 @@ export const COLORS = {
   PROGRESS_GRAY_STROKE: '#696F8C80',
   PROGRESS_GRAY_TRAIL: '#696F8C1A',
 } as const
+
+export const TIMELINE_ITEMS = [
+  {
+    badgeColor: 'bg-zeedas-lightpurple',
+    badgeText: 'Launched a side project',
+    badgeTextColor: 'text-zeedas-purple',
+    date: '19 Jan, 2023',
+    captionText: 'Obsidian',
+    captionSubtext:
+      'Built a no-code analytics platform that adheres to the GDPR guidelines and can be easily setup by any business.',
+    icon: BriefCaseIcon,
+    iconColor: COLORS.PROGRESS_PURPLE_STROKE,
+    imageSrc: DashboardImage,
+  },
+  {
+    badgeColor: 'bg-zeedas-lightgreen',
+    badgeText: 'Earned a certificate',
+    badgeTextColor: 'text-zeedas-green',
+    date: '17 Jan, 2023',
+    captionText: 'Udacity · Introduction to machine learning',
+    captionSubtext:
+      'Completed the course and earned a certificate of excellence for finishing top five in the cohort with one of the highest grades.',
+    icon: AcademicCapIcon,
+    iconColor: COLORS.PROGRESS_GREEN_STROKE,
+    imageSrc: SignImage,
+  },
+  {
+    badgeColor: 'bg-zeedas-lightblue',
+    badgeText: 'Earned a badge',
+    badgeTextColor: 'text-zeedas-blue',
+    date: '14 Jan, 2023',
+    captionText: 'Code review ninja',
+    captionSubtext: 'Achieved 3,000 code review hours.',
+    icon: TrophyIcon,
+    iconColor: COLORS.PROGRESS_BLUE_STROKE,
+    imageSrc: DesignWizardBadge2Image,
+  },
+  {
+    badgeColor: 'bg-zeedas-lightorange',
+    badgeText: 'Made an open source contribution',
+    badgeTextColor: 'text-zeedas-darkorange',
+    date: '19 Dec 2022',
+    captionText: '',
+    captionSubtext: '',
+    icon: GithubIcon,
+    iconColor: COLORS.ORANGE,
+    imageSrc: GithubProfileViewImage,
+  },
+  {
+    badgeColor: 'bg-zeedas-lightblue',
+    badgeText: 'Earned a badge',
+    badgeTextColor: 'text-zeedas-blue',
+    date: '05 Nov 2022',
+    captionText: 'Code wrangler',
+    captionSubtext: 'Milestone: written a 1,000,000 lines of code',
+    icon: TrophyIcon,
+    iconColor: COLORS.PROGRESS_BLUE_STROKE,
+    imageSrc: DesignWizardBadge1Image,
+  },
+] as const
 
 export const NAV_LINKS = [
   {

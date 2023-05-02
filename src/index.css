@@ -20,3 +20,11 @@ a:hover {
 * {
   box-sizing: border-box;
 }
+
+.ant-timeline-item-head-custom {
+  background-color: transparent !important;
+}
+
+.ant-timeline-item-tail {
+  margin-left: 110.5px !important;
+}

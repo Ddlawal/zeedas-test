@@ -17,7 +17,10 @@ const Title: FC<{ title: string }> = ({ title }) => (
 
 export const ViewerStats: FC = () => {
   return (
-    <PrimaryLayout showHeaderBorder={true} className="mb-20 px-[19.5625rem]">
+    <PrimaryLayout
+      showHeaderBorder={true}
+      className="mx-auto mb-20 w-[50.875rem] px-10 md:px-0"
+    >
       <div className="mb-6 mt-10 flex justify-between">
         <div className="text-2xl font-semibold leading-7 text-zeedas-text-primary">
           Profile analytics

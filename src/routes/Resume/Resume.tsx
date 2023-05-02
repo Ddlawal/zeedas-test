@@ -13,12 +13,15 @@ import { REVIEW_FUNDAMENTALS, SUBMIT_FUNDAMENTALS } from '../../lib/constants'
 
 export const Resume: FC = () => {
   return (
-    <PrimaryLayout showHeaderBorder={true} className="mb-20 px-20">
-      <div className="mt-6 flex gap-x-20">
-        <div className="max-w-[24.5rem]">
+    <PrimaryLayout
+      showHeaderBorder={true}
+      className="mx-auto mb-20 w-[51rem] px-10 lg:w-full lg:px-20"
+    >
+      <div className="mx-auto mt-6 w-full lg:flex lg:gap-x-20">
+        <div className="lg:max-w-[24.5rem] ">
           <UserInfo avatarSize={80} showRank />
         </div>
-        <div className="w-full">
+        <div className="w-[50rem]">
           <div className="mb-5 text-[1.125rem] font-extrabold text-zeedas-text-primary">
             Metrics
           </div>

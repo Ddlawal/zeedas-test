@@ -52,7 +52,7 @@ export const FundamentalsMetrics: FC<FundamentalsMetricsProps> = ({
   return (
     <Card className="mb-5 h-[271px]">
       <div className="flex h-full w-full">
-        <div className="w-full">
+        <div className="min-w-[25rem] lg:w-full">
           <div className="my-4 ml-6">
             <MetricsTitle
               title={title}

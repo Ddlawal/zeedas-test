@@ -7,7 +7,7 @@ import { SelectDropdown } from '../../components/SelectDropdown'
 
 export const Home: FC = () => {
   return (
-    <PrimaryLayout className="mx-auto mb-20 w-[40rem]">
+    <PrimaryLayout className="mx-auto mb-20 w-[40rem] px-10 md:px-0">
       <UserInfo showFollowButton />
       <div className="mt-16 flex justify-between">
         <div className="mb-5 text-lg font-semibold leading-[22px] text-zeedas-text-primary">

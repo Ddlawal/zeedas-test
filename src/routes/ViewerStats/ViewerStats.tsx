@@ -69,7 +69,7 @@ export const ViewerStats: FC = () => {
           Recent visitors
         </div>
         <Accordion />
-        <Button className="ml-4 text-sm leading-6 text-zeedas-btn-primary">
+        <Button className="ml-4 text-sm leading-6 text-zeedas-btn-primary transition-all hover:font-medium">
           Show more
         </Button>
       </Card>

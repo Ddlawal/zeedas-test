@@ -66,10 +66,10 @@ export const UserInfo: FC<UserInfoProps> = ({
       </div>
       <div className="flex flex-wrap gap-3">
         {PROGRAMMING_SKILLS.map(
-          ({ color, icon: Icon, id, languageRating, textColor }) => {
+          ({ color, icon: Icon, id, language, percent, textColor }) => {
             const iconNode: ReactNode =
               typeof Icon === 'string' ? (
-                <img src={Icon} alt={languageRating} width={20} height={20} />
+                <img src={Icon} alt={language} width={20} height={20} />
               ) : (
                 <Icon />
               )
@@ -77,7 +77,8 @@ export const UserInfo: FC<UserInfoProps> = ({
               <SkillBadge
                 key={idPrefix + id}
                 icon={iconNode}
-                text={languageRating}
+                percent={percent}
+                text={language}
                 className={color}
                 textColor={textColor}
               />

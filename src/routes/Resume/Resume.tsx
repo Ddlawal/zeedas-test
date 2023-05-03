@@ -21,7 +21,7 @@ export const Resume: FC = () => {
         <div className="lg:max-w-[24.5rem] ">
           <UserInfo avatarSize={80} showRank />
         </div>
-        <div className="w-[50rem]">
+        <div className="w-[50rem] lg:w-full">
           <div className="mb-5 text-[1.125rem] font-extrabold text-zeedas-text-primary">
             Metrics
           </div>

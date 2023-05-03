@@ -16,13 +16,21 @@ const FundamentalsMetricsItem: FC<
 > = ({ icon: Icon, isActive, metric, value, metricUnit, onClick }) => {
   return (
     <button
-      className={cx(isActive && 'bg-zeedas-bg-chart', 'w-full')}
+      className={cx(
+        isActive && 'bg-zeedas-bg-chart',
+        'w-full transition-all duration-300'
+      )}
       onClick={onClick}
     >
       <div className="my-2 box-border flex h-[23px] w-full items-center justify-between px-6">
         <div className="flex items-center gap-x-3 text-xs">
           <Icon color={isActive ? COLORS.TEXT_BLUE : undefined} />
-          <div className={cx(isActive && 'text-zeedas-text-blue')}>
+          <div
+            className={cx(
+              isActive ? 'text-zeedas-text-blue' : 'text-zeedas-text-dark',
+              'transition-all duration-100'
+            )}
+          >
             {metric}
           </div>
         </div>

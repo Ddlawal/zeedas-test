@@ -10,6 +10,7 @@ export interface BadgeProps {
 
 export interface SkillBadgeProps {
   icon: ReactNode
+  percent: number
   text: string
   className?: string
   textColor?: string

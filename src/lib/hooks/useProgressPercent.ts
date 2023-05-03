@@ -1,12 +1,16 @@
 import { useEffect, useState } from 'react'
 
-export const useProgressPercent = (progress: number) => {
+export const useProgressPercent = (
+  progress: number,
+  inc: number = 10,
+  timeout: number = 50
+) => {
   const [progressPercent, setProgressPercent] = useState(0)
 
   useEffect(() => {
     const interval = setInterval(() => {
       setProgressPercent(prev => {
-        prev += 10
+        prev += inc
 
         if (prev > progress - 1) {
           clearInterval(interval)
@@ -15,7 +19,7 @@ export const useProgressPercent = (progress: number) => {
 
         return prev
       })
-    }, 50)
+    }, timeout)
 
     return () => clearInterval(interval)
   }, [])

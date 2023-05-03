@@ -7,9 +7,10 @@ export interface UserInfoProps {
 }
 
 export interface ProgrammingSkillsI {
-  id: number
-  languageRating: string
-  icon: FC | string
   color: string
+  icon: FC | string
+  id: number
+  language: string
+  percent: number
   textColor?: string
 }

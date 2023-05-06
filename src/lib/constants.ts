@@ -1,5 +1,5 @@
-import { BarDatum } from '@nivo/bar'
-import { Serie } from '@nivo/line'
+import { Datum } from '@nivo/line'
+
 import {
   DashboardImage,
   DesignWizardBadge1Image,
@@ -578,7 +578,7 @@ export const RECENT_VISITORS: Array<RecentVisitorsI> = [
   },
 ]
 
-export const CHART_DATA1: Array<BarDatum | Serie> = [
+export const CHART_DATA1: Array<Datum> = [
   {
     x: 1,
     y: 0.7,

@@ -1,6 +1,7 @@
 import { BarDatum } from '@nivo/bar'
-import { Serie } from '@nivo/line'
+import { Datum } from '@nivo/line'
 import { FC, ReactNode } from 'react'
+
 import { BadgeColorI } from '../Badge/Badge.interface'
 import { IconProps } from '../Icons/icons.interface'
 
@@ -21,7 +22,7 @@ export interface MetricsTitleProps {
 
 export type MetricsProps = MetricsBodyProps &
   MetricsTitleProps & {
-    chartData: Array<BarDatum | Serie>
+    chartData: Array<BarDatum | Datum>
     chartColor: string
     chartId: string
     chartClassName?: string
@@ -35,11 +36,6 @@ export interface AssessmentProps {
   percentile: number
 }
 
-export interface BarchartDataI {
-  date: string
-  value: number
-}
-
 export interface FundamentalsMetricsProps {
   title: string
   data: Array<FundamentalsMetricsItemProps>
@@ -51,7 +47,7 @@ export interface FundamentalsMetricsItemProps {
   icon: FC<IconProps>
   metric: string
   value: number
+  data: Array<BarDatum>
   metricUnit?: string
   isActive?: boolean
-  data?: Array<BarchartDataI>
 }

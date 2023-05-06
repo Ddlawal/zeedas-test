@@ -1,3 +1,7 @@
+export interface AccordionProps {
+  items: Array<RecentVisitorsI>
+}
+
 export type AccordionItemProps = RecentVisitorsI & {
   activeIndex: number
   index: number

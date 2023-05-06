@@ -68,10 +68,7 @@ export const CodingAssessments: FC = () => {
   return (
     <Card>
       <div className="item-center my-[18px] ml-6 mr-[18px] flex justify-between">
-        <MetricsTitle
-          title="Coding assessments"
-          infoText="Figuring out tasks and action points"
-        />
+        <MetricsTitle title="Coding assessments" infoText="Assessment grades" />
         <div className="flex h-4 items-center">
           <span className="text-sm text-zeedas-text-gray">Powered by</span>
           <img

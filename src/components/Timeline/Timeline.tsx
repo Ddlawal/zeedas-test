@@ -4,11 +4,9 @@ import { FC } from 'react'
 
 import { ClockIcon } from '../Icons'
 import { TIMELINE_ITEMS } from '../../lib/constants'
+import { TimelineCaptionProps } from './Timeline.interface'
 
-const Caption: FC<{ title: string; subtitle: string }> = ({
-  title,
-  subtitle,
-}) => (
+const TimelineCaption: FC<TimelineCaptionProps> = ({ title, subtitle }) => (
   <div className="mb-2 mt-4">
     <div className="text-base font-medium text-zeedas-text-primary">
       {title}
@@ -41,7 +39,7 @@ const items = TIMELINE_ITEMS.map(
           <div className={cx(badgeTextColor, 'font-bold')}>{badgeText}</div>
         </div>
         {imageSrc && <img src={imageSrc} alt="dashboard" height={240} />}
-        <Caption title={captionText} subtitle={captionSubtext} />
+        <TimelineCaption title={captionText} subtitle={captionSubtext} />
       </div>
     ),
     dot: (

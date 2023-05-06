@@ -67,12 +67,14 @@ export const UserInfo: FC<UserInfoProps> = ({
       <div className="flex flex-wrap gap-3">
         {PROGRAMMING_SKILLS.map(
           ({ color, icon: Icon, id, language, percent, textColor }) => {
-            const iconNode: ReactNode =
-              typeof Icon === 'string' ? (
+            let iconNode: ReactNode = <Icon />
+
+            if (typeof Icon === 'string') {
+              iconNode = (
                 <img src={Icon} alt={language} width={20} height={20} />
-              ) : (
-                <Icon />
               )
+            }
+
             return (
               <SkillBadge
                 key={idPrefix + id}

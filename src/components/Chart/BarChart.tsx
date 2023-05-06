@@ -1,9 +1,9 @@
-import { ResponsiveBar } from '@nivo/bar'
+import { BarDatum, ResponsiveBar } from '@nivo/bar'
 import cx from 'classnames'
 import { FC } from 'react'
 
 export const BarChart: FC<{
-  data: any
+  data: Array<BarDatum>
   color: string
   className?: string
 }> = ({ className, color, data }) => {

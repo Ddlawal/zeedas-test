@@ -1,13 +1,15 @@
-import { Divider } from 'antd'
-import { FC } from 'react'
+import { Divider, Spin } from 'antd'
+import cx from 'classnames'
+import { FC, useState } from 'react'
 
 import { Accordion } from '../../components/Accordion'
+import { RecentVisitorsI } from '../../components/Accordion/Accordion.interface'
 import { Button } from '../../components/Button'
 import { Card } from '../../components/Card'
 import { Metric } from '../../components/Metrics'
 import { SelectDropdown } from '../../components/SelectDropdown'
 import { PrimaryLayout } from '../../layout/PrimaryLayout'
-import { CHART_DATA1, COLORS } from '../../lib/constants'
+import { CHART_DATA1, COLORS, RECENT_VISITORS } from '../../lib/constants'
 
 const Title: FC<{ title: string }> = ({ title }) => (
   <div className="text-base font-semibold leading-5 text-zeedas-text-primary">
@@ -16,6 +18,21 @@ const Title: FC<{ title: string }> = ({ title }) => (
 )
 
 export const ViewerStats: FC = () => {
+  const [isLoading, setIsLoading] = useState(false)
+  const [items, setItems] = useState<Array<RecentVisitorsI>>(RECENT_VISITORS)
+
+  const handleClick = () => {
+    setIsLoading(true)
+
+    setTimeout(() => {
+      setItems(prev => {
+        return [...prev, ...RECENT_VISITORS]
+      })
+
+      setIsLoading(false)
+    }, 1000)
+  }
+
   return (
     <PrimaryLayout
       showHeaderBorder={true}
@@ -68,10 +85,26 @@ export const ViewerStats: FC = () => {
         <div className="mb-6 px-4 text-base font-semibold leading-5 text-zeedas-text-primary">
           Recent visitors
         </div>
-        <Accordion />
-        <Button className="ml-4 text-sm leading-6 text-zeedas-btn-primary transition-all hover:font-medium">
-          Show more
-        </Button>
+        <Accordion items={items} />
+        <div className="flex items-center">
+          <Button
+            className={cx(
+              isLoading && 'hidden',
+              'ml-4 flex-none text-sm leading-6 text-zeedas-btn-primary transition-all hover:font-medium'
+            )}
+            onClick={handleClick}
+          >
+            Show more
+          </Button>
+          <div
+            className={cx(
+              isLoading ? 'opacity-100' : 'opacity-0',
+              'flex flex-auto items-center justify-center transition-all duration-300 ease-out'
+            )}
+          >
+            <Spin />
+          </div>
+        </div>
       </Card>
     </PrimaryLayout>
   )

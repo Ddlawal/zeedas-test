@@ -1,3 +1,12 @@
+import { BarDatum } from '@nivo/bar'
+import { Serie } from '@nivo/line'
+import {
+  DashboardImage,
+  DesignWizardBadge1Image,
+  DesignWizardBadge2Image,
+  GithubProfileViewImage,
+  SignImage,
+} from '../assets'
 import { RecentVisitorsI } from '../components/Accordion/Accordion.interface'
 import {
   AcademicCapIcon,
@@ -7,12 +16,8 @@ import {
   BriefCaseIcon,
   CommentIcon,
   CubeIcon,
-  DashboardImage,
-  DesignWizardBadge1Image,
-  DesignWizardBadge2Image,
   FlutterIcon,
   GithubIcon,
-  GithubProfileViewImage,
   HandRaisedIcon,
   HeroIcon,
   HomeIcon,
@@ -23,7 +28,6 @@ import {
   PHPIcon,
   PythonIcon,
   RubyIcon,
-  SignImage,
   ThumbsUpIcon,
   TrophyIcon,
   ViewerStatsIcon,
@@ -33,6 +37,7 @@ import {
   AssessmentProps,
   FundamentalsMetricsItemProps,
 } from '../components/Metrics/Metrics.interface'
+import { TimelineItemsI } from '../components/Timeline/Timeline.interface'
 import { ProgrammingSkillsI } from '../components/UserInfo/UserInfo.interface'
 
 export const COLORS = {
@@ -52,7 +57,7 @@ export const COLORS = {
   PROGRESS_GRAY_TRAIL: '#696F8C1A',
 } as const
 
-export const TIMELINE_ITEMS = [
+export const TIMELINE_ITEMS: Array<TimelineItemsI> = [
   {
     badgeColor: 'bg-zeedas-lightpurple',
     badgeText: 'Launched a side project',
@@ -206,7 +211,7 @@ export const CODING_ASSESSMENTS: Array<AssessmentProps> = [
   },
 ]
 
-export const SUBMIT_FUNDAMENTALS: Array<FundamentalsMetricsItemProps> = [
+const SUBMIT_FUNDAMENTALS: Array<FundamentalsMetricsItemProps> = [
   {
     id: 1,
     icon: IterateIcon,
@@ -333,7 +338,7 @@ export const SUBMIT_FUNDAMENTALS: Array<FundamentalsMetricsItemProps> = [
   },
 ]
 
-export const REVIEW_FUNDAMENTALS: Array<FundamentalsMetricsItemProps> = [
+const REVIEW_FUNDAMENTALS: Array<FundamentalsMetricsItemProps> = [
   {
     id: 1,
     icon: LifeBuoyIcon,
@@ -460,17 +465,32 @@ export const REVIEW_FUNDAMENTALS: Array<FundamentalsMetricsItemProps> = [
   },
 ]
 
-export const RAISING_PROGRESS_SIZE: Array<[number, number, number]> = [
-  [7, 11, 0],
-  [7, 14, 10],
-  [7, 18, 20],
-  [7, 21, 30],
-  [7, 25, 40],
-  [7, 28, 50],
-  [7, 32, 60],
-  [7, 35, 70],
-  [7, 39, 80],
-  [7, 43, 90],
+export const FUNDAMENTALS_DATA = [
+  {
+    id: 1,
+    data: SUBMIT_FUNDAMENTALS,
+    infoText: 'Submission fundamentals',
+    title: 'Submit fundamentals',
+  },
+  {
+    id: 2,
+    data: REVIEW_FUNDAMENTALS,
+    infoText: 'Review fundamentals',
+    title: 'Review fundamentals',
+  },
+] as const
+
+export const RAISING_PROGRESS_SIZE: Array<[number, number, number, number]> = [
+  [1, 7, 11, 0],
+  [2, 7, 14, 10],
+  [3, 7, 18, 20],
+  [4, 7, 21, 30],
+  [5, 7, 25, 40],
+  [6, 7, 28, 50],
+  [7, 7, 32, 60],
+  [8, 7, 35, 70],
+  [9, 7, 39, 80],
+  [10, 7, 43, 90],
 ]
 
 export const VISITS = [
@@ -479,7 +499,7 @@ export const VISITS = [
   { id: 3, metric: 'Time most visited', value: '4PM' },
   { id: 4, metric: 'Avg. time spent', value: '10:44s' },
   { id: 5, metric: 'Avg. read', value: '64%' },
-]
+] as const
 
 export const TIME_SPENT_ON_SECTION_METRICS = [
   { id: 1, metric: 'Personal details', time: '259 hrs (54%)', percent: 54 },
@@ -488,7 +508,7 @@ export const TIME_SPENT_ON_SECTION_METRICS = [
   { id: 4, metric: 'Review fundamentals', time: '32 hrs (9%)', percent: 9 },
   { id: 5, metric: 'Speed & accuracy', time: '15 hrs (5%)', percent: 5 },
   { id: 5, metric: 'Task awareness...', time: '9 hrs (3%)', percent: 3 },
-]
+] as const
 
 export const RECENT_VISITORS: Array<RecentVisitorsI> = [
   {
@@ -558,7 +578,7 @@ export const RECENT_VISITORS: Array<RecentVisitorsI> = [
   },
 ]
 
-export const CHART_DATA1 = [
+export const CHART_DATA1: Array<BarDatum | Serie> = [
   {
     x: 1,
     y: 0.7,

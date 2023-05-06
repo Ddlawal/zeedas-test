@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useId } from 'react'
 
 import {
   CodeAndBugMetrics,
@@ -9,9 +9,11 @@ import {
 } from '../../components/Metrics'
 import { UserInfo } from '../../components/UserInfo'
 import { PrimaryLayout } from '../../layout/PrimaryLayout'
-import { REVIEW_FUNDAMENTALS, SUBMIT_FUNDAMENTALS } from '../../lib/constants'
+import { FUNDAMENTALS_DATA } from '../../lib/constants'
 
 export const Resume: FC = () => {
+  const idPrefix = useId()
+
   return (
     <PrimaryLayout
       showHeaderBorder={true}
@@ -26,11 +28,13 @@ export const Resume: FC = () => {
             Metrics
           </div>
           <SpeedAndAccuracyMetrics />
-          {[
-            { title: 'Submit fundamentals', data: SUBMIT_FUNDAMENTALS },
-            { title: 'Review fundamentals', data: REVIEW_FUNDAMENTALS },
-          ].map(({ data, title }) => (
-            <FundamentalsMetrics title={title} data={data} />
+          {FUNDAMENTALS_DATA.map(({ data, id, infoText, title }) => (
+            <FundamentalsMetrics
+              key={idPrefix + id}
+              title={title}
+              data={data}
+              infoText={infoText}
+            />
           ))}
           <TaskAwarenessMetrics />
           <CodeAndBugMetrics />

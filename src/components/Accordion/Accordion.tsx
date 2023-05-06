@@ -2,7 +2,7 @@ import cx from 'classnames'
 import { FC, ReactNode, useId, useState } from 'react'
 
 import { AccordionItem } from '.'
-import { RECENT_VISITORS } from '../../lib/constants'
+import { AccordionProps } from './Accordion.interface'
 
 const Header: FC<{ children?: ReactNode; className?: string }> = ({
   children,
@@ -27,7 +27,7 @@ export const NameAvatar: FC<{ bg: string; color: string; name: string }> = ({
     className={cx(
       bg,
       color,
-      'flex h-10 w-10 items-center justify-center rounded-full text-sm'
+      'flex h-10 w-10 items-center justify-center rounded-full text-sm uppercase'
     )}
   >
     {name
@@ -37,7 +37,7 @@ export const NameAvatar: FC<{ bg: string; color: string; name: string }> = ({
   </div>
 )
 
-export const Accordion: FC = () => {
+export const Accordion: FC<AccordionProps> = ({ items }) => {
   const idPrefix = useId()
   const [activeIndex, setActiveIndex] = useState(-1)
 
@@ -58,7 +58,7 @@ export const Accordion: FC = () => {
         <Header className="min-w-[3.5rem]">Time spent</Header>
         <div className="min-w-[6rem]" />
       </div>
-      {RECENT_VISITORS.map((visitors, i) => (
+      {items.map((visitors, i) => (
         <AccordionItem
           activeIndex={activeIndex}
           key={idPrefix + visitors.id}

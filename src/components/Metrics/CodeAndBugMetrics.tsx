@@ -14,7 +14,7 @@ export const CodeAndBugMetrics: FC = () => {
         metricUnit="%"
         metricValue={65}
         title="Code efficiency"
-        infoText="Speed of picking up where I left off"
+        infoText="The efficiency of my code"
         chartId="Code"
         chartData={CHART_DATA1}
         chartColor={COLORS.GREEN}
@@ -27,7 +27,7 @@ export const CodeAndBugMetrics: FC = () => {
       <div className="w-full">
         <MetricsTitle
           title="Bug introduction"
-          infoText="Speed of picking up where I left off"
+          infoText="How often I get bugs in my code"
         />
         <div className="mt-1 flex w-full items-center">
           <div className="w-full">

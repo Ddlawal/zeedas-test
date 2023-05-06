@@ -50,6 +50,7 @@ const FundamentalsMetricsItem: FC<
 
 export const FundamentalsMetrics: FC<FundamentalsMetricsProps> = ({
   data,
+  infoText,
   title,
 }) => {
   const idPrefix = useId()
@@ -62,10 +63,7 @@ export const FundamentalsMetrics: FC<FundamentalsMetricsProps> = ({
       <div className="flex h-full w-full">
         <div className="min-w-[25rem] lg:w-full">
           <div className="my-4 ml-6">
-            <MetricsTitle
-              title={title}
-              infoText="Figuring out tasks and action points"
-            />
+            <MetricsTitle title={title} infoText={infoText} />
           </div>
 
           <Divider

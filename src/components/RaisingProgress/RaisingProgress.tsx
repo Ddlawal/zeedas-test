@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useId } from 'react'
 import cx from 'classnames'
 
 import { RaisingProgressProps } from './RaisingProgress.interface'
@@ -10,11 +10,14 @@ export const RaisingProgress: FC<RaisingProgressProps> = ({
   strokeColor,
   trailColor,
 }) => {
+  const idPrefix = useId()
+
   return (
     <div className={cx(className, 'flex items-end gap-x-[1px]')}>
-      {RAISING_PROGRESS_SIZE.map(([width, height, size]) => {
+      {RAISING_PROGRESS_SIZE.map(([id, width, height, size]) => {
         return (
           <div
+            key={idPrefix + id}
             style={{
               width: `${width}px`,
               height: `${height}px`,

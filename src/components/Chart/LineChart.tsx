@@ -1,9 +1,9 @@
-import { ResponsiveLine } from '@nivo/line'
+import { ResponsiveLine, Serie } from '@nivo/line'
 import cx from 'classnames'
 import { FC } from 'react'
 
 export const LineChart: FC<{
-  data: any
+  data: Array<Serie>
   color: string
   className?: string
 }> = ({ className, color, data }) => {

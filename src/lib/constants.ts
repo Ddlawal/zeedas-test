@@ -507,7 +507,7 @@ export const TIME_SPENT_ON_SECTION_METRICS = [
   { id: 3, metric: 'Submit fundamentals', time: '84 hrs (15%)', percent: 15 },
   { id: 4, metric: 'Review fundamentals', time: '32 hrs (9%)', percent: 9 },
   { id: 5, metric: 'Speed & accuracy', time: '15 hrs (5%)', percent: 5 },
-  { id: 5, metric: 'Task awareness...', time: '9 hrs (3%)', percent: 3 },
+  { id: 6, metric: 'Task awareness...', time: '9 hrs (3%)', percent: 3 },
 ] as const
 
 export const RECENT_VISITORS: Array<RecentVisitorsI> = [

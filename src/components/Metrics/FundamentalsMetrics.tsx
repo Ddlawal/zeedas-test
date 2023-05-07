@@ -1,5 +1,5 @@
 import { Divider } from 'antd'
-import { FC, useId, useState } from 'react'
+import { FC, memo, useCallback, useId, useState } from 'react'
 import cx from 'classnames'
 
 import { MetricsTitle } from '.'
@@ -12,41 +12,46 @@ import { BarChart } from '../Chart'
 import { COLORS } from '../../lib/constants'
 
 const FundamentalsMetricsItem: FC<
-  FundamentalsMetricsItemProps & { onClick: () => void }
-> = ({ icon: Icon, isActive, metric, value, metricUnit, onClick }) => {
-  return (
-    <button
-      className={cx(
-        isActive && 'bg-zeedas-bg-chart',
-        'w-full transition-all duration-300'
-      )}
-      onClick={onClick}
-    >
-      <div className="my-2 box-border flex h-[23px] w-full items-center justify-between px-6">
-        <div className="flex items-center gap-x-3 text-xs">
-          <Icon color={isActive ? COLORS.TEXT_BLUE : undefined} />
-          <div
-            className={cx(
-              isActive ? 'text-zeedas-text-blue' : 'text-zeedas-text-dark',
-              'transition-all duration-100'
-            )}
-          >
-            {metric}
+  FundamentalsMetricsItemProps & {
+    index: number
+    onClick: (index: number) => void
+  }
+> = memo(
+  ({ icon: Icon, index, isActive, metric, value, metricUnit, onClick }) => {
+    return (
+      <button
+        className={cx(
+          isActive && 'bg-zeedas-bg-chart',
+          'w-full transition-all duration-300'
+        )}
+        onClick={() => onClick(index)}
+      >
+        <div className="my-2 box-border flex h-[23px] w-full items-center justify-between px-6">
+          <div className="flex items-center gap-x-3 text-xs">
+            <Icon color={isActive ? COLORS.TEXT_BLUE : undefined} />
+            <div
+              className={cx(
+                isActive ? 'text-zeedas-text-blue' : 'text-zeedas-text-dark',
+                'transition-all duration-100'
+              )}
+            >
+              {metric}
+            </div>
+          </div>
+          <div className="font-medium">
+            <span className="text-xs">{value}</span>
+            <span className="text-[10px]">{metricUnit}</span>
           </div>
         </div>
-        <div className="font-medium">
-          <span className="text-xs">{value}</span>
-          <span className="text-[10px]">{metricUnit}</span>
-        </div>
-      </div>
-      <Divider
-        type="horizontal"
-        orientation="center"
-        className="m-0 border-zeedas-border-gray"
-      />
-    </button>
-  )
-}
+        <Divider
+          type="horizontal"
+          orientation="center"
+          className="m-0 border-zeedas-border-gray"
+        />
+      </button>
+    )
+  }
+)
 
 export const FundamentalsMetrics: FC<FundamentalsMetricsProps> = ({
   data,
@@ -56,7 +61,9 @@ export const FundamentalsMetrics: FC<FundamentalsMetricsProps> = ({
   const idPrefix = useId()
   const [activeIndex, setActiveIndex] = useState(0)
 
-  const handleClick = (index: number) => setActiveIndex(index)
+  const handleClick = useCallback((index: number) => {
+    setActiveIndex(index)
+  }, [])
 
   return (
     <Card className="mb-5 h-[271px]">
@@ -77,7 +84,8 @@ export const FundamentalsMetrics: FC<FundamentalsMetricsProps> = ({
               key={idPrefix + metric.id}
               {...metric}
               isActive={activeIndex === i}
-              onClick={() => handleClick(i)}
+              index={i}
+              onClick={handleClick}
             />
           ))}
         </div>

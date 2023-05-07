@@ -4,7 +4,7 @@ import { FC, ReactNode, useId, useState } from 'react'
 import { AccordionItem } from '.'
 import { AccordionProps } from './Accordion.interface'
 
-const Header: FC<{ children?: ReactNode; className?: string }> = ({
+const AccordionHeader: FC<{ children?: ReactNode; className?: string }> = ({
   children,
   className,
 }) => (
@@ -52,10 +52,12 @@ export const Accordion: FC<AccordionProps> = ({ items }) => {
   return (
     <div>
       <div className="mb-[12.5px] flex justify-between overflow-hidden px-4">
-        <Header className="min-w-[13.85rem]">Name and email</Header>
-        <Header className="min-w-[6rem]">Date</Header>
-        <Header className="min-w-[9rem]">Location</Header>
-        <Header className="min-w-[3.5rem]">Time spent</Header>
+        <AccordionHeader className="min-w-[13.85rem]">
+          Name and email
+        </AccordionHeader>
+        <AccordionHeader className="min-w-[6rem]">Date</AccordionHeader>
+        <AccordionHeader className="min-w-[9rem]">Location</AccordionHeader>
+        <AccordionHeader className="min-w-[3.5rem]">Time spent</AccordionHeader>
         <div className="min-w-[6rem]" />
       </div>
       {items.map((visitors, i) => (
